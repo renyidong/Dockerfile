@@ -7,6 +7,7 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/te
     mkdir /build/ &&\
     wget -O - http://download.deluge-torrent.org/source/deluge-${version}.tar.xz | tar xJf - -C /build/ &&\
     cd /build/deluge-${version}/ &&\
+    sed -i 's/storage_mode = lt.storage_mode_t(1)/storage_mode = lt.storage_mode_t(0)/' deluge/core/torrentmanager.py &&\
     python setup.py build install &&\
     adduser -D deluge &&\
     cd / && rm -rf /build/ &&\
