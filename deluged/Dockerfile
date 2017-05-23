@@ -1,6 +1,6 @@
 FROM alpine:edge
 MAINTAINER Yidong Ren <docker@yidong.im>
-ARG version=1.3.14
+ARG version=1.3.15
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ python2 py-setuptools libtorrent-rasterbar py-chardet py-xdg py-twisted py-openssl py-service_identity ca-certificates py-certifi py-setproctitle py-rencode py-mako &&\
     apk add --no-cache --virtual build-dependencies py2-pip bash &&\
     pip install attrs twisted pyOpenSSL slimit &&\
