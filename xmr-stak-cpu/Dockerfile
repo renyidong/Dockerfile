@@ -1,6 +1,6 @@
 FROM alpine
-RUN  apk add --no-cache libmicrohttpd libssl1.0 libstdc++ libgcc &&\
-     apk add --no-cache --virtual .build-deps wget openssl unzip patch cmake make g++ libmicrohttpd-dev openssl-dev patch &&\
+RUN  apk add --no-cache libmicrohttpd libssl1.0 libstdc++ libgcc hwloc &&\
+     apk add --no-cache --virtual .build-deps wget openssl unzip patch cmake make g++ libmicrohttpd-dev openssl-dev patch hwloc-dev &&\
      cd && mkdir build && cd build &&\
      wget https://github.com/fireice-uk/xmr-stak-cpu/archive/master.zip &&\
      unzip master.zip && cd xmr-stak-cpu-master &&\
