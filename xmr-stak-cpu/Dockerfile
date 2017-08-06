@@ -4,8 +4,8 @@ RUN  apk add --no-cache libmicrohttpd libssl1.0 libstdc++ libgcc &&\
      cd && mkdir build && cd build &&\
      wget https://github.com/fireice-uk/xmr-stak-cpu/archive/master.zip &&\
      unzip master.zip && cd xmr-stak-cpu-master &&\
-     echo '#pragma once' >donate-level.h
-     echo 'constexpr double fDevDonationLevel = 0;' >>donate-level.h
+     echo '#pragma once' >donate-level.h &&\
+     echo 'constexpr double fDevDonationLevel = 0;' >>donate-level.h &&\
      cmake . -DHWLOC_ENABLE=OFF -DCMAKE_INSTALL_PREFIX=/usr/local && make install &&\
      rm /usr/local/bin/config.txt &&\
      cd && rm -rf build &&\
