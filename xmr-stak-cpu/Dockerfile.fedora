@@ -1,9 +1,0 @@
-FROM fedora
-RUN dnf -y install gcc-c++ cmake make libmicrohttpd-devel wget unzip sed openssl-devel &&\
-    dnf clean all &&\
-    cd && mkdir build && cd build &&\
-    wget https://github.com/fireice-uk/xmr-stak-cpu/archive/master.zip &&\
-    unzip master.zip && cd xmr-stak-cpu-master &&\
-    cmake . && make install &&\
-    cd && rm -rf build
-ENTRYPOINT ["nice", "-n", "99", "xmr-stak-cpu"]

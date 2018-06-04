@@ -1,0 +1,6 @@
+"pool_list" :
+[
+        {"pool_address" : "europe.cryptonight-hub.miningpoolhub.com:20580", "wallet_address" : "ryd995.prs6", "rig_id" : "", "pool_password" : "x", "use_nicehash" : false, "use_tls" : true, "tls_fingerprint" : "", "pool_weight" : 1 },
+],
+"currency" : "monero7",
+
