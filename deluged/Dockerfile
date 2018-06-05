@@ -1,9 +1,9 @@
 FROM alpine:edge
 MAINTAINER Yidong Ren <docker@yidong.im>
-ARG VERSION=1.3.15
 ARG DELUGE_USER=deluge
 ARG BUILD_DIR=/build/
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ python2 py-setuptools libtorrent-rasterbar py-chardet py-xdg py-twisted py-openssl py-service_identity ca-certificates py-certifi py-setproctitle py-rencode py-mako &&\
+RUN VERSION=`wget -O - http://download.deluge-torrent.org/version` &&\
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ python2 py-setuptools libtorrent-rasterbar py-chardet py-xdg py-twisted py-openssl py-service_identity ca-certificates py-certifi py-setproctitle py-rencode py-markupsafe py-mako &&\
     apk add --no-cache --virtual build-dependencies py2-pip bash &&\
     pip install attrs twisted pyOpenSSL slimit &&\
     mkdir ${BUILD_DIR} && cd ${BUILD_DIR} &&\
